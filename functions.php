@@ -47,3 +47,11 @@ add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
 	add_image_size( 'custom_logo', 400, 100 );
 }
+
+add_filter( 'template_include', 'search_results_template' );
+function search_results_template( $template ) {
+    if ( is_search() ) {
+        $template = locate_template( 'search.php' );
+    }
+    return $template;
+}

@@ -35,7 +35,7 @@
                             while ( $query->have_posts() ) {
                                 $query->the_post();
                                 the_post_thumbnail('full', array( 'class' => 'img-fluid thumb' ));
-                                the_title('<h3 class="title">', '</h3>');
+                                the_title('<h3 class="title">', '</h3><hr>');
                             }
                             wp_reset_postdata();
                         }

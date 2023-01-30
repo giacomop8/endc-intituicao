@@ -27,37 +27,35 @@
 
             <?php
             /* se existir posts */
-            if (have_posts()):
-                    while (have_posts()): ?>
-                        <?php the_post();
-                        ?>
-                        <div class="post-box">
-                            <a href="<?= the_permalink() ?>">
-                                <?php if( has_post_thumbnail()) : 
-                                    the_post_thumbnail ('medium', array( 'class' => 'img-fluid') );
-                                endif;
-                                ?>
-                            </a>
-                            <div class="post-title">
-                                <a href="<?= the_permalink() ?>"><?= the_title() ?></a> <br>
-                            </div>
-                            
-                            <div class="post-data">
-                                <p><?= the_time('d - F, Y')?></p>
-                            </div>
-                            <div class="post-saiba-mais">
-                                <a href="<?= the_permalink() ?>"><button class="btn btn-saiba-mais">Leia mais...</button></a>
-                            </div>
+            if (have_posts()): while (have_posts()):  the_post();  ?>
+                    <div class="post-box">
+                        <a href="<?= the_permalink() ?>">
+                            <?php if( has_post_thumbnail()) : 
+                                the_post_thumbnail ('medium', array( 'class' => 'img-fluid') );
+                            endif;
+                            ?>
+                        </a>
+                        <div class="post-title">
+                            <a href="<?= the_permalink() ?>"><?= the_title() ?></a> <br>
                         </div>
                         
-                    <?php endwhile;
+                        <div class="post-data">
+                            <p><?= the_time('d - F, Y')?></p>
+                        </div>
+                        <div class="post-saiba-mais">
+                            <a href="<?= the_permalink() ?>"><button class="btn btn-saiba-mais">Leia mais...</button></a>
+                        </div>
+                    </div>                    
+                <?php endwhile;
 
             /* caso não exista */
             else:
                 ?>
                 <p>Não existem posts</p>
                 <?php
+                
             endif;
+            wp_reset_postdata();
             ?>
         </div>
         <div class="btn-noticias">
