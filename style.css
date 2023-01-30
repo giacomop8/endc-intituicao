@@ -41,8 +41,6 @@ main{
     padding-right: 5%;
     padding-left: 1%;
 }
-.logo img{
-}
 .descricao h1{
     margin: 0;
     padding: 0;
@@ -280,9 +278,6 @@ li{
     width: 30%;
     padding: .8%;
 }
-#ultimas-noticias-sidebar{
-    
-}
 #ultimas-noticias-sidebar h2{
     font-weight: 900;
     font-size: 1.5em;
@@ -367,10 +362,6 @@ footer p{
     font-size: 1em;
     line-height: 2;
 }
-.rodape div{
-    
-}
-
 .rodape span{
     font-size: 1.2em;
     font-weight: 800;
